@@ -1,0 +1,70 @@
+1. 	what is a decorator in Python, explain with example. 
+Ans:  Decorator allows us to wrap another function in order to extend the behaviour of the wrapped function,
+  without permanently modifying it.
+
+2.	What is closure in python
+Ans:    If we access the parameter from outside function to inside function, this is called closure.
+
+3. 	When to use Python Closures and their benefits
+Ans: Closures can be used to avoid the unnecessary use of class. 
+     Closures can also be used to avoid the use of global variable.
+     The only way to access the inner function is by calling the outer function. 
+     Benifits: Data hiding is an important use of closures.     
+               Closures are useful because they let us associate data with a function that operates on that data.
+
+4. 	What is module in python
+        Modules are python files containing Python code that can be 
+        reused in another Python Program.
+
+
+5.	What is an iterator in python
+       Iterator is an object that can be iterated upon. This means that it can traverse through 
+       all the values in the object.
+
+
+
+6.	print the current date and time using 'datetime' module along with month name
+
+        import datetime
+
+        today_time=datetime.datetime.now()
+
+        print("Today's date  and time is= ",today_time)
+        print("Today's month is= ",today_time.month)
+
+7.	loop through a nested folder and print all the file name
+         import os
+path_of_the_directory= 'E:\Python for Data Science'
+print("Files and directories in a specified path:")
+for filename in os.listdir(path_of_the_directory):
+    f = os.path.join(path_of_the_directory,filename)
+    if os.path.isfile(f):
+        print(f)
+
+8. 	Create a directory, write a text file and append it.
+
+       os.mkdir("ok")
+exact = open('data','a')
+exact.write("Bangalore is cloudy \n")
+exact.write("It may Rain, do not get drenched")
+exact=open('data','r')
+print(exact.read())
+
+9.	What is PIP?
+        PIP is a package manager for Python packages
+
+
+10. How to install and uninstall a package/module in python
+    We have to open the command prompt. To install and uninstall Package /module below command should be used respectively.
+   pip install <packagename>
+   pip uninstall <packagename>
+
+11. Using 'requests' module fetch the contents of https://itdefine.in/ in web.txt file
+
+import requests,re
+x=requests.get('https://www.itdefine.in/')
+exact=open('actual.txt','w')
+data=exact.write(x.text)
+
+12. Search the phone number and email address in web.txt file
+print(re.findall('[a-z]+\@\[a-z]\.\w+'|\+\d{2}\s\d{10},data))

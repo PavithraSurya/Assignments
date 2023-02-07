@@ -1,0 +1,8 @@
+What is closure in python?
+What is Class in python
+How to instantiate a class in Python?
+What is self in Python?
+What is the __init__ method?
+How do you implement inheritance in Python?
+How to access parent class inside child class in Python?
+What is super()

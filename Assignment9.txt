@@ -1,0 +1,146 @@
+1)How can you interact with MySQL?
+
+To interact with MySQL, use CMD or Anaconda prompt and use below commands to execute  the queries.
+mysql -u root -p( if password is given)
+enter the password: ******
+After we can excecute the SQL queries
+
+To interact from Python use the Library Sqlalchemy
+
+
+2) What is the difference between TRUNCATE TABLE and DROP TABLE and DELETE Queries in MySQL
+The DROP TABLE command deletes the complete table in the database.
+Eg; DROP TABLE <TABLE_NAME>;
+
+The TRUNCATE TABLE command deletes the whole data inside a table, but not the table itself. Its execution is faster than Delete command.
+eg: TRUNCATE TABLE stu;
+
+
+The DELETE command is used to delete the existing records in a table based on condition, without conditio we can delete entire data in table.
+Eg: To delete the row in table
+DELETE FROM students WHERE student_Id=2;
+
+
+3) What are CRUD operations, explain with queries.
+
+CRUD -- create, read, update and drop
+
+To Create Database
+CREATE DATABASE City;
+
+To create Tables;
+CREATE TABLE Student(Student_Id int,Student_Name varchar(255),Student_Branch varchar(255),Student_Batch varchar(255));
+
+To Read(select) data in the table
+select * from Student;
+select * from students WHERE student_Branch LIKE 'CSE';
+
+To UPDATE values of column using values within table
+UPDATE car_data1 SET color=car_data1.index+ 20;
+UPDATE students SET Student_Name="Kashu" WHERE Student_Id=4;
+
+To delete Database
+DROP DATABASE City;
+
+
+4) What are the Temporal Data Types in MySQL?
+Temporal Data Types is a data type in MySQL to reperesent date, time, year and intervals.
+
+
+5)Explain BLOB in MySQL? Explain with queries.
+
+A BLOB is a binary large object that can hold a large amount of data which includes objects such as images and multimedia files.
+The four BLOB types are TINYBLOB , BLOB , MEDIUMBLOB , and LONGBLOB.
+
+CREATE TABLE data_type_details
+(
+id INT PRIMARY KEY,
+name VARCHAR(255),
+description BLOB
+);
+
+The data_type_details table has been successfully created with a description field of BLOB data type.
+
+
+6)How to check the MySQL version?
+By logging into mysql shell it provides version name.
+
+give command in any prompt ->> mysql -V
+
+7)How to join three tables in MySQL? Explain with queries
+add a second INNER JOIN statement and a second ON statement to indicate the third table and the second relationship.
+
+SELECT * FROM car_data1 INNER JOIN students ON car_data1.year = students.Student_Batch INNER JOIN dummy ON students.Student_Batch = dummy.Student_Batch;
+
+
+8)What is the difference between primary key and foriegn key? Explain with queries
+Primary key is column name in the table which has unique and non null values.
+Foriegn key is column name which is compared to primary key of another table.
+The table with the foreign key is called the child table, and the table with the primary key is called as parent table.
+combination will be primary key , combination will be UNIQUE
+
+Eg: This is for primary key
+CREATE TABLE Docu(
+	Student_Id int NOT NULL AUTO_INCREMENT,    
+	Student_Name varchar(255) ,
+Student_Branch varchar(255),
+PRIMARY KEY (Student_Id));
+
+CREATE TABLE Trial(
+	Student_Id int NOT NULL AUTO_INCREMENT, 
+	Student_Ref_num int ,
+Student_Branch varchar(255),
+PRIMARY KEY (Student_Id),
+FORIEGN KEY (Student_Ref_num) REFERENCES Docu((Student_Id));
+
+
+9)What is the difference bettwen Auto incrementment Key, Unique Key and Primary key? Explain with queries
+Auto incrementment Key : once this is set to any field it starts from 1 and increment by 1 for next entry. Values will be Unique. 
+                         We can set the initial value. If there is one auto increment key in the table by default it will be primary key.
+
+Eg: CREATE TABLE Person(
+	Person_Id int NOT NULL AUTO_INCREMENT,       
+	Person_Name varchar(20) ,
+	Student_Place varchar(50),
+        PRIMARY KEY (Student_Id));
+ 
+Unique Key: All values in a column are different( do not repeat/ Not null), as unique Table can have more than one unique key. 
+            unique key does not supports Auto increment value. We can change unique key values.
+EG: CREATE TABLE Person(
+	Person_Id int,
+	Person_Name varchar(20) ,
+	Student_Place varchar(50),
+        CONSTRAINT Identification UNIQUE (Person_Id );
+
+Primary key:  Primary key is a column of table which identifies each row in that table.
+              Primary key supports auto increment value. We cannot change or delete values stored in primary keys like in Unique key.
+              Primary key of one table can be referenced by foreign key of another table. 
+             If there is more than one auto increment key we have to specify oe auto-increment as the primary key.
+
+Eg: CREATE TABLE Person(
+	Person_AAdhar num int NOT NULL AUTO_INCREMENT,  
+        Person_Election ID int NOT NULL AUTO_INCREMENT,       
+	Person_Name varchar(20) ,
+	Student_Place varchar(50),
+        PRIMARY KEY (Person_AAdhar num));
+
+
+
+
+10)What is the difference between SQL and MySQL?
+SQL is a query programming language. It is used to operate database systems
+MySQL is a software and relational database management system that uses SQL.
+
+11)How to check database size in MySQL? Explain with queries
+To check database size in MySQL enter below command
+select table_schema `Database`, Round(Sum(data_length + index_length) / 1024 / 1024, 1) `Size in MB` FROM information_schema.TABLES GROUP BY table_schema;
+ 
+12)How to change/rename the table name in MySQL? Explain with queries
+To rename the table name we have to use alter and rename command
+EG: alter table car_data rename to fake;
+
+
+13)How to change/rename the DB name in MySQL? Explain with queries
+To change or ename the data base use RENAME  or ALTER. ( Below commands are not working)
+Eg: RENAME DATABASE sys MODIFY NAME=sysm;  
+    ALTER DATABASE sys MODIFY NAME=sysm;

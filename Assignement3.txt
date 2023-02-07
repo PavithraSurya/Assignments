@@ -1,0 +1,8 @@
+1. Python program to print first n prime numbers where n is the input
+2. Python Program to remove duplicate elements from a list WITHOUT using set
+3. Filter the price in a dictionary, check if the price of the item is 
+	greater than 2000, between 3000-7000 and so on
+	Ex: 
+		smart_phone_dict =  {'Samsung': 35500, 'Realme': 14000, 'Moto G10 Power': 3500, 'OnePlus 8 Pro':50000, 'Samsung 2': 6000, 'Lika': 1500
+		, 'Lava': 2500,  'Redme': 4500}
+	

@@ -1,0 +1,107 @@
+
+1)  Create a DataFrame using List
+import pandas as pd
+d_f=[['sachin','abhi', 'sid','sam'],[23, 12, 31, 40]]
+d_f_o=pd.DataFrame(d_f)
+d_f_o
+
+2) Create a DataFrame from dict of ndarrays
+import pandas as pd
+df={'Names':['sachin','abhi', 'sid','sam'],
+    'Age': [23, 12, 31, 40]}
+df_o=pd.DataFrame(df)
+df_o
+
+3) How will you create a series from dict in Pandas
+df={'Names':['sachin','abhi', 'sid','sam'],
+    'Age': [23, 12, 31, 40]}
+df_o=pd.Series(df)
+df_o
+
+4) Create an empty DataFrame in Pandas
+import pandas as pd
+df={}
+df_o=pd.DataFrame(df)
+df_o
+
+5) Create a DataFrame from CSV File
+sample_d_f=pd.read_csv(r'C:\Users\Kashvi\Desktop\file.csv')
+sample_d_f
+
+6)Create a DataFrame from Excel File
+sample_d_f=pd.read_excel(r'C:\Users\Kashvi\Desktop\pa.xlsx')
+sample_d_f
+
+
+7) Add a column to an existing pandas DataFrame
+import pandas as pd
+df={'Names':['sachin','abhi', 'sid','sam'],
+    'Age': [23, 12, 31, 40]}
+df_o=pd.DataFrame(df)
+df_o
+adding new column
+df_o['std']=(['V','VII','X','IX'])
+df_o
+
+8) Convert DataFrame into a NumPy array
+df={'Names':['sachin','abhi', 'sid','sam'],
+    'Age': [23, 12, 31, 40]}
+df_o=pd.DataFrame(df)
+df_o
+arr = df_o.to_numpy()
+arr
+
+
+9) Explain Multiple Indexing in pands
+We can add sub index to one index in dataframe by declaring that sub index values in  lists or tuples using multiindex. It can be used for grouping the data as well.
+
+
+10) How Will You Explain Reindexing In Pandas?
+ Reindexing is used to change the index values in row or coloumns.
+import pandas as pd
+d_f=[['sachin','abhi', 'sid','sam'],[23, 12, 31, 40]]
+d_f_o=pd.DataFrame(d_f)
+d_f_o
+output
+
+0	1	2	3
+0	sachin	abhi	sid	sam
+1	23	12	31	40
+
+d_f_o.set_index([2])
+
+Output
+0	1	3
+2			
+sid	sachin	abhi	sam
+31	23	12	40
+
+
+
+11) How Can You Iterate Over Dataframe In Pandas?
+df={'Names':['sachin','abhi', 'sid','sam'],
+    'Age': [23, 12, 31, 40]}
+df_o=pd.DataFrame(df)
+df_o
+for i in df_o.index:
+    print(df_o['Names'][i],df_o['Age'][i])
+
+
+12) How to check whether a Pandas DataFrame is empty?  
+df={}
+df_o=pd.DataFrame(df)
+if df_o.empty:
+    print('DataFrame is empty')
+else:
+    print('DataFrame is not empty')
+
+13) How can you get count and mean statistics for groups in Pandas?  
+using describe function we ca get count ,mean, standard deviation, max, min.
+d_f.describe()
+
+14) Select rows whose column value does not equal some_value in Pandas
+df={'Names':['sachin','abhi', 'sid','sam'],
+    'Age': [23, 12, 31, 40]}
+df_o=pd.DataFrame(df)
+x=df_o['Age']!=23
+df_o[(x)]

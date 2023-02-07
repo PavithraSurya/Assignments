@@ -1,0 +1,9 @@
+Define a property that must have the same value for every class instance (object)
+
+Create Class Vehicle, and inherit the class for creating
+	School Bus
+	Office Cab
+	Truck and
+	Tractor
+
+	Use of atleast 4 Instace Variables and 2 Class Variables and 3 Methods

@@ -1,0 +1,207 @@
+What is the difference between list and tuples in Python?
+Both comes under sequence.
+List: List is Mutable and hence have several methods to edit the data. Stores duplicates values and elemensts can be accessed using indes value.
+      It denoted by square bracketes. Dynamic in nature.
+Tuple: Immutable, denoted by small brackets. Static in nature. can also have duplicate entries
+
+What are Keywords in Python?
+Keywords are reserved words which we cannot use as variable or function name.
+
+What are python iterato
+Iterators is the object which can traverse through all the values and stores data in a sequence. To print values use keyword
+ next which gives only one value at a time.
+
+What are Python packages?
+Python package is collection of modules.
+
+What is the difference between deep and shallow copy?
+In Shallow Copy, copies and the original object shares the same memory address. If any changes made in copied object reflects in original as well.
+In Deep copy, copied object will be in different memory. Any changes made to copied object will not reflect in original object. 
+
+How to import modules in python?
+Use the keyword import and module name
+eg: to import regular expression module
+import re
+
+What do you mean by Python literals
+Literals are raw data or values that can stored in variables.It can numbers, strings, boolean data.
+
+Create a dictorany using zip() function
+keys = ['Toy', 'price','shop name',manuf date']
+values = ['doll', 25,'Aurelia','30 Sep']
+Dy = dict(zip(keys, values))
+print(Dy)
+
+
+How to overload constructors or methods in Python?
+Using Decorators method we can overload since decorator extends the functionality behavior. Another method is to change the input literal ,
+so that the same function name executes based on the input type.
+
+What is the difference between remove() function and del statement?
+Removes()- It removes the first matching element using the value
+eg remove('a')
+wheras del delete the values using the index.eg: del[0]
+
+How to remove leading whitespaces from a string in the Python?
+Usinf strip function. rstrip removes rightside spaces and lstrip removes left spaces
+
+What are the rules for a local and global variable in Python?
+Local variable -varialbe whose usage is restricted within the function .
+Global varialbe- This variable can be used anywhere in the program and not restriced to one specific function.
+
+
+What is a generator in Python?
+Generators is a function in Python which are used to create iterators and return a iterable object.
+It helps in traversing all the items one at a time with the help of the keyword yield(return is not used since it terminates the function)
+
+
+What is a  in Python?
+a is used in regular expression. a is used to append the file.
+
+Explain pass, continue and break statements
+In Loops, pass  does not break or do anything, it iterates till last number.
+Continue: It will break the current iteration once condition satisfies. Print statement will be skipped for current iteration.
+break: It breaks the iteration once the condition satisfies.
+
+Print the elements in a list using for loop in reverse way
+
+List1=[23,45,67,12,9,72]
+RL=[]
+count=6
+for i in range(len(6,0):
+    print(RL(i))
+    count-=1
+   
+
+Explain the comiple(), split(), sub(), and subn() methods of the Python "re" module. 
+compile() method is used to compile a regular expression pattern provided as a string into a regex pattern object ( re. Pattern ). 
+Later we can use this pattern object to search for a match inside different target strings using re.
+split() – uses a regex pattern to “split” a given string into a list.
+sub() – finds all substrings where the regex pattern matches and then replace them with a different string.
+subn() – being similar to sub() it also returns the new string along with the number of replacements.
+
+
+Reverse a string in python
+Considering the A as string value. A([::-1]) gives reverse string
+
+Read the contents of Excel File using xlrd module
+xlrd- Module is used to readinf files and formating information from data files in xls format.
+
+To read the content
+import xlrd
+# To open work book
+WB=xlrd.open_workbook('filename.xlsx')  # filename.xlsx is the file we wish to open
+
+work_sheet = WB.sheet_by_index(sheet_index)
+variable worksheet reference to the sheet by index sheet_index, where sheet_index specifies the index of the sheet we wish to open.
+
+worksheet.cell_value(row,column)
+Above command is used to get the value of the cell row, column position in the excel file.
+
+
+Read the contents of Excel File using import PyPDF2
+PyPDF2: It is a python library used for performing major tasks on PDF files.
+
+Create file1 using 'open()' function and write contents to it.
+New_file=open('file1.txt',w)
+New_file.write('This is the new file and writing the content in it') 
+
+
+Copy the contents of file1 to contents of file2 
+Can copy one file content to another fiile content by shutil method.
+eg; import shutil
+    shutil.copyfile('file.txt','file2.txt')(should mention destination not file name)
+
+Copy all files present in one directory to another using os and shutil modules
+import os, shutil
+ 
+# path to source directory
+src_dir = 'fol1'
+ 
+# path to destination directory
+dest_dir = 'fol2'
+ 
+# getting all the files in the source directory
+files = os.listdir(src_dir)
+ 
+shutil.copytree(src_dir, dest_dir)
+
+
+What is a lambda function? Give an example of when it’s useful and when it’s not
+Lambda is a one liner function
+Lambda function is useful 1) for simple logical operations, oters can understand easily 2) if we are using  function for one time
+Lamba function cannot be used 1) if we have many argumments  2) in nested functions
+               
+
+Explain inheritance and types of inheritances in Python with an example
+Inheritance allows the class to inherits all the methods and properties from another class.
+Multiple inheritance and multilevel inhheritance
+
+
+How would you sort a dictionary in Python
+import collections
+for k, v in od.iteritems(): 
+print k, v
+
+or
+
+color_dict= {'red':'#FF0000',
+          'green':'#008000',
+          'black':'#000000',
+          'white':'#FFFFFF'}
+
+for key in sorted(color_dict):
+    print("%s: %s" % (key, color_dict[key]))
+
+
+Write program for Factorial Numbers
+a=input(int('Enter the number:'))
+count=0
+x=true
+while(x)
+count+=1
+Fact=a*(a-1)
+if count==a:
+    x=false
+print(fact)
+
+
+Write program for Anagram
+sort both the strings and compare
+x="sarita"
+y="barita"
+
+x.sort
+y.sort
+if x==y:
+    print('Two strings are anagram")
+else
+    print("not Anagram")
+
+Write program for Armstrong Numbers
+
+n=input(int(entr the value:')
+
+sum=0
+
+for i in len(n)
+    i=i**3
+    sum =sum+0
+    if i=len(n): 
+        break
+print(sum)
+if Sum =n
+    print("this is Armstrong")
+else:
+    print(not)
+   
+
+Look  into the module itertools
+Itertools is a module in Python, it is used to iterate over data structures.This module incorporates functions. 
+This can ve used for grouping the data, to set combinations in data, pemutation of elements, flattening lists(removes grouping and gives in single list)
+
+Look  into the module collections
+Python has built in module called collections which has specialised data structures which covers the short coming of 4 data types(List,Tuple, sets, dict).
+collections module provides additional data structures for collections of data.
+
+
